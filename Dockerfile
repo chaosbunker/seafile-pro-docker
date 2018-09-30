@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.22
+FROM phusion/baseimage:0.11
 
 MAINTAINER Dennis Rodewyk <ufo@chaosbunker.com>
 
@@ -6,12 +6,11 @@ ENV SEAFILE_VERSION 6.3.4
 EXPOSE 80
 
 VOLUME /seafile
-WORKDIR /seafile
 
 # Required packages for pro edition
 RUN apt-get update && apt-get install -y \
   openjdk-8-jre poppler-utils libpython2.7 python-pip \
-  python-setuptools python-imaging python-mysqldb python-memcache python-ldap \
+  python-setuptools python-pil python-mysqldb python-memcache python-ldap \
   python-urllib3 wget nginx \
   libreoffice libreoffice-script-provider-python fonts-vlgothic ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy && pip install boto
 
@@ -49,5 +48,7 @@ RUN chmod +x /usr/local/sbin/setup && \
 	chmod +x /etc/service/seafile/* && \
 	chmod +x /etc/service/seahub/* && \
 	chmod +x /etc/service/nginx/*
+
+WORKDIR /seafile/seafile-server-latest
 
 CMD /sbin/my_init
