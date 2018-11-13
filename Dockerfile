@@ -2,7 +2,7 @@ FROM phusion/baseimage:0.11
 
 MAINTAINER Dennis Rodewyk <ufo@chaosbunker.com>
 
-ENV SEAFILE_VERSION 6.3.4
+ENV SEAFILE_VERSION 6.3.7
 EXPOSE 80
 
 VOLUME /seafile
