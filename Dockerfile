@@ -9,7 +9,7 @@ VOLUME /seafile
 
 # Required packages for pro edition
 RUN apt-get update && apt-get install -y \
-  openjdk-8-jre poppler-utils libpython2.7 python-pip \
+  tzdata openjdk-8-jre poppler-utils libpython2.7 python-pip \
   python-setuptools python-pil python-mysqldb python-memcache python-ldap \
   python-urllib3 wget nginx \
   libreoffice libreoffice-script-provider-python fonts-vlgothic ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy && pip install boto
