@@ -49,6 +49,6 @@ RUN chmod +x /usr/local/sbin/setup && \
 	chmod +x /etc/service/seahub/* && \
 	chmod +x /etc/service/nginx/*
 
-WORKDIR /seafile/seafile-server-latest
+WORKDIR /seafile
 
 CMD /sbin/my_init
